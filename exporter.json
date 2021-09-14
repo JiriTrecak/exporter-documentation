@@ -6,7 +6,7 @@
     "organization": "Supernova",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.0.5",
+    "version": "1.1",
     "config": {
         "sources": "sources.json",
         "output": "output.json",
@@ -21,8 +21,7 @@
         "Documentation"
     ],
     "contributes": {
-        "configuration": [
-            {
+        "configuration": [{
                 "key": "googleAnalyticsAPIKey",
                 "default": "",
                 "type": "string",
@@ -129,8 +128,7 @@
         }]
     },
     "contributes_upcoming": {
-        "configuration": [
-            {
+        "configuration": [{
                 "key": "defaultVisualMode",
                 "default": "light",
                 "type": "enum",
