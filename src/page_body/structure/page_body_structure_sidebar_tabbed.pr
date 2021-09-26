@@ -15,7 +15,7 @@
 {[ if rootGroup ]}
     {[ if isRootForTab ]}
         <div class="nav-name">
-            <span class="typographyDocsViewLabelCaps">{{ rootGroup.title.uppercased() }}</span>
+            <span class="typographyDocsViewLabelCaps">{{ rootGroup.title }}</span>
         </div>
     {[/]}
     <ul class="nav flex-column ">
@@ -44,13 +44,6 @@
     </ul>
 {[ else ]}
     <div class="nav-name">
-        <span class="typographyDocsViewLabelCaps">{{ context.page.title.uppercased() }}</span>
+        <span class="typographyDocsViewLabelCaps">{{ context.page.title }}</span>
     </div>
 {[/]}
-
-<div class="nav-sn">
-    <a href="https://supernova.io" target="_blank">
-        {[ const domain = ds.documentationConfiguration().domain /]}
-        <img src="{{ assetUrl("logos/powered-by-supernova.png", domain) }}" title="Supernova, the most advanced design system platform" alt="Supernova, the most advanced design system platform" />
-    </a>
-</div>

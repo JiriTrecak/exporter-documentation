@@ -890,7 +890,6 @@ hr {
 .primary-menu {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
-    display: flex !important;
     height: auto !important;
     -webkit-box-ordinal-group: 0;
     -ms-flex-item-align: stretch;
