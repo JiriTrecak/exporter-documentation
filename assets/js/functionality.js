@@ -245,21 +245,18 @@ function loadVersions(url) {
     Live sandbox manipulation
 ------------------------------- */
 
-// Convert to instance
-const SandboxRenderer = window.sandboxRenderer
-window.sandboxRenderer = new SandboxRenderer()
-window.sandboxRenderer.listener = function(message) {
-    console.log(message)
-        // Remove sandbox loaders when loaded correctly
-    if (message.message && message.type === "success") {
+// Add listeners for actions
+window.sandboxEngine.listener = function(message) {
+    // Remove sandbox loaders when loaded correctly
+    if (message.status === "done" || message.status === "error") {
         $(`.sandbox-loader-container[data-target="${message.sandboxId}"]`).remove();
     }
-    // TODO: Handle incorrect parsing
 };
 
+// Build all sandboxes at the load of the page
 $(document).ready(function() {
     // Build all sandboxes
-    window.sandboxRenderer.buildSandboxesForTargetsWithIDStartingWith("sandbox")
+    window.sandboxEngine.buildSandboxStartingWith("sandbox")
 });
 
 
@@ -364,4 +361,21 @@ $("#sidebarCollapse").on("click", function(e) {
     console.log(`toggle`)
     $(".docs-navigation").toggleClass("d-inline")
     e.preventDefault()
+})
+
+
+/*------------------------
+   Health status overlay
+-------------------------- */
+
+$('a[data-target="health-status"]').on("click", function(e) {
+    // Toggle the overlay
+    $(".health-overlay").toggleClass("d-none");
+    e.preventDefault();
+})
+
+$('.health-overlay').on("click", function(e) {
+    // Toggle the overlay
+    $(".health-overlay").toggleClass("d-none");
+    e.preventDefault();
 })

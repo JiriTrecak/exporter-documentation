@@ -1,12 +1,12 @@
 {
-    "id": "io.jiritrecak.experimental-docs",
-    "name": "Jiri's Experimental Docs",
-    "description": "Jiri's exporter experiments. Some fun blocks you will not find anywhere else",
+    "id": "io.supernova.documentation-main",
+    "name": "Documentation",
+    "description": "Base Documentation Exporter",
     "author": "Jiri Trecak",
     "organization": "Supernova",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.1",
+    "version": "1.7.0",
     "config": {
         "sources": "sources.json",
         "output": "output.json",
@@ -68,85 +68,118 @@
                 "default": ""
             },
             {
-                "key": "giphyAPIKey",
+                "key": "componentHealthSourceIdentifier",
                 "type": "string",
-                "label": "Giphy API Key",
-                "description": "API to use when requesting Giphy images",
-                "category": "Access Keys",
+                "label": "Component Health Sheet Identifier",
+                "description": "Google Sheets identifier that points to a google sheets file containing component health statuses",
+                "category": "Components",
+                "default": ""
+            },
+            {
+                "key": "componentHealthSourceName",
+                "type": "string",
+                "label": "Component Health Sheet Name",
+                "description": "Name of a specific sheet that containing component health statuses. Note that this is case sensitive",
+                "category": "Components",
                 "default": ""
             }
         ],
         "blocks": [{
-            "key": "io.jiritrecak.block.giphy",
-            "category": "Jiri's Experiments",
-            "title": "Giphy",
-            "description": "Add Giphy block and pray that god of mischief smiles upon you today",
-            "icon": "icons/giphy.png",
-            "mode": "block",
-            "properties": [
-                {
-                    "key": "search",
+                "key": "io.supernova.documentation-main.markdown",
+                "category": "Remote Data Blocks",
+                "title": "Markdown",
+                "description": "Embed and process markdown from remote URL",
+                "icon": "icons/markdown.png",
+                "mode": "block",
+                "properties": [{
+                    "key": "markdownUrl",
                     "default": "",
-                    "label": "Search Term",
-                    "type": "string"
-                },
-                {
-                    "key": "weirdness",
-                    "type": "enum",
-                    "default": "0",
-                    "label": "Weirdness Intensity",
-                    "values": [
-                        "0",
-                        "1",
-                        "2",
-                        "3",
-                        "4",
-                        "5",
-                        "6",
-                        "7",
-                        "8",
-                        "9",
-                        "10"
-                    ]
-                }
-            ]
-        }, {
-            "key": "io.jiritrecak.block.soundcloud",
-            "category": "Jiri's Experiments",
-            "title": "SoundCloud",
-            "description": "Add SoundCloud player",
-            "icon": "icons/soundcloud.png",
-            "mode": "block",
-            "properties": [
-                {
-                    "key": "url",
-                    "default": "",
-                    "label": "Track URL",
-                    "type": "string"
-                }
-            ]
-        }]
-    },
-    "contributes_upcoming": {
-        "configuration": [{
-                "key": "defaultVisualMode",
-                "default": "light",
-                "type": "enum",
-                "values": [
-                    "light",
-                    "dark"
-                ],
-                "label": "Default design theme",
-                "description": "Base theme configuration for the entire design system documentation",
-                "category": "Design"
+                    "type": "string",
+                    "label": "Markdown URL"
+                }]
             },
             {
-                "key": "showVisualModeSwitch",
-                "default": false,
-                "type": "boolean",
-                "label": "Dark/Light mode switch",
-                "description": "Allow users to switch from light to dark documentation using top menu item",
-                "category": "Design"
+                "key": "io.supernova.documentation-main.component-health",
+                "category": "Component Blocks",
+                "title": "Static Health",
+                "description": "Show static component health information",
+                "icon": "icons/component-health.png",
+                "mode": "block",
+                "properties": [{
+                        "key": "health",
+                        "default": "healthy",
+                        "type": "enum",
+                        "label": "Health",
+                        "values": [
+                            "healthy",
+                            "withering",
+                            "dormant"
+                        ]
+                    },
+                    {
+                        "key": "published",
+                        "default": "",
+                        "type": "string",
+                        "label": "Date Published"
+                    },
+                    {
+                        "key": "updated",
+                        "default": "",
+                        "type": "string",
+                        "label": "Date Updated"
+                    },
+                    {
+                        "key": "designUrl",
+                        "default": "",
+                        "type": "string",
+                        "label": "Design URL"
+                    },
+                    {
+                        "key": "repositoryUrl",
+                        "default": "",
+                        "type": "string",
+                        "label": "Repository URL"
+                    },
+                    {
+                        "key": "info",
+                        "default": "",
+                        "type": "string",
+                        "label": "More Info"
+                    }
+                ]
+            },
+            {
+                "key": "io.supernova.documentation-main.component-health-dynamic",
+                "category": "Component Blocks",
+                "title": "Dynamic Health",
+                "description": "Show component health information from API",
+                "icon": "icons/component-health.png",
+                "mode": "block",
+                "properties": [{
+                    "key": "componentId",
+                    "default": "",
+                    "type": "string",
+                    "label": "Component ID"
+                }]
+            },
+            {
+                "key": "io.supernova.documentation-main.component-health-dynamic-list",
+                "category": "Component Blocks",
+                "title": "Dynamic Health List",
+                "description": "Show component health information about all components from API",
+                "icon": "icons/component-health.png",
+                "mode": "block",
+                "properties": [{
+                    "key": "showSummary",
+                    "default": true,
+                    "type": "boolean",
+                    "label": "Show summary"
+                }, {
+                    "key": "showList",
+                    "default": true,
+                    "type": "boolean",
+                    "label": "Show list"
+                }]
             }
         ]
     }

@@ -3,9 +3,11 @@
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 // MARK: - Imports
 
-import { experimentalFigmaFrameBlock, experimentalDefaultPageStyle, experimentalForcedPageStyle } from "./doc_functionality/experimental"
+import { experimentalDefaultPageStyle, experimentalForcedPageStyle } from "./doc_functionality/experimental"
+import { constructDynamicHealthBlock, constructDynamicHealthList, constructGoogleSheetCSVUrl } from "./doc_functionality/health"
 import { firstPageFromTop, firstSubgroupOfPage, pageOrGroupActiveInContext } from "./doc_functionality/lookup"
-import { encodeSandboxData, getFrontendSandboxData, isSandboxDefinition } from "./doc_functionality/sandbox"
+import { markdownToHTML } from "./doc_functionality/markdown"
+import { htmlSafeString } from "./doc_functionality/sandbox"
 import { buildSearchIndexJSON } from "./doc_functionality/search"
 import { highlightSafeString } from "./doc_functionality/string_utils"
 import { formattedTokenGroupHeader, fullTokenGroupName, gradientDescription, gradientTokenValue, measureTypeIntoReadableUnit, shadowDescription, shadowTokenValue, typographyDescription } from "./doc_functionality/tokens"
@@ -32,11 +34,6 @@ Pulsar.registerFunction("assetUrl", assetUrl)
 Pulsar.registerFunction("slugifyHeading", slugifyHeading)
 Pulsar.registerFunction("textBlockPlainText", textBlockPlainText)
 
-/* Sandbox features */
-Pulsar.registerFunction("isSandboxDefinition", isSandboxDefinition);
-Pulsar.registerFunction("encodeSandboxdata", encodeSandboxData);
-Pulsar.registerFunction("getFrontendSandboxData", getFrontendSandboxData);
-
 /* Token manipulation and formatting */
 Pulsar.registerFunction("formattedTokenGroupHeader", formattedTokenGroupHeader)
 Pulsar.registerFunction("fullTokenGroupName", fullTokenGroupName)
@@ -48,6 +45,16 @@ Pulsar.registerFunction("measureTypeIntoReadableUnit", measureTypeIntoReadableUn
 Pulsar.registerFunction("typographyDescription", typographyDescription)
 
 /* Experimental area for upcoming editor features */
-Pulsar.registerFunction("experimentalDefaultPageStyle", experimentalDefaultPageStyle);
-Pulsar.registerFunction("experimentalForcedPageStyle", experimentalForcedPageStyle);
-Pulsar.registerFunction("experimentalFigmaFrameBlock", experimentalFigmaFrameBlock);
+Pulsar.registerFunction("experimentalDefaultPageStyle", experimentalDefaultPageStyle)
+Pulsar.registerFunction("experimentalForcedPageStyle", experimentalForcedPageStyle)
+
+/* Markdown */
+Pulsar.registerFunction("markdownToHTML", markdownToHTML)
+
+/* Component Health */
+Pulsar.registerFunction("constructDynamicHealthBlock", constructDynamicHealthBlock)
+Pulsar.registerFunction("constructDynamicHealthList", constructDynamicHealthList)
+Pulsar.registerFunction("constructGoogleSheetCSVUrl", constructGoogleSheetCSVUrl)
+
+/* Sandbox */
+Pulsar.registerFunction("htmlSafeString", htmlSafeString)
