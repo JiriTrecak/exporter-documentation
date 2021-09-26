@@ -17,7 +17,7 @@
     {[ let sheetUrl = constructGoogleSheetCSVUrl(sourceIdentifier, sourceName) /]}
     {[ let data = getNetworkData(sheetUrl) /]}
 
-    {* Retrieve information from the API. In order to be compatible with component health block, we create expected block structure *}
+    {* Retrieve information from the API. In order to be compatible with content health block, we create expected block structure *}
     {[ if !data ]}
         <p>Unable to fetch information about component ID {{ componentId }}</p>
     {[ else ]}

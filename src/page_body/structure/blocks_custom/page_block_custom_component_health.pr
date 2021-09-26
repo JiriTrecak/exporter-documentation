@@ -1,6 +1,6 @@
 {[ const block = context /]}
 
-{* Render component health block *}
+{* Render content health block *}
 {[ let health = block.properties.health /]}
 {[ let published = block.properties.published /]}
 {[ let updated = block.properties.updated /]}
@@ -8,7 +8,7 @@
 {[ let repositoryUrl = block.properties.repositoryUrl /]}
 {[ let information = block.properties.info /]}
 
-{* Handle component health block *}
+{* Handle content health block *}
 <div class="component-health-row">
     <a class="health" href="#" data-target="health-status">
         <div class="tag health {{ health }}">

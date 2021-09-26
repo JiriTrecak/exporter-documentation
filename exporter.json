@@ -1,12 +1,12 @@
 {
     "id": "io.supernova.documentation-main",
-    "name": "Documentation",
-    "description": "Base Documentation Exporter",
+    "name": "Sprout",
+    "description": "Supernova homage to Sprout design system",
     "author": "Jiri Trecak",
     "organization": "Supernova",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.7.0",
+    "version": "1.0.0",
     "config": {
         "sources": "sources.json",
         "output": "output.json",
@@ -70,17 +70,17 @@
             {
                 "key": "componentHealthSourceIdentifier",
                 "type": "string",
-                "label": "Component Health Sheet Identifier",
-                "description": "Google Sheets identifier that points to a google sheets file containing component health statuses",
-                "category": "Components",
+                "label": "Content Health Sheet Identifier",
+                "description": "Google Sheets identifier that points to a google sheets file containing content health statuses",
+                "category": "Health",
                 "default": ""
             },
             {
                 "key": "componentHealthSourceName",
                 "type": "string",
-                "label": "Component Health Sheet Name",
-                "description": "Name of a specific sheet that containing component health statuses. Note that this is case sensitive",
-                "category": "Components",
+                "label": "Content Health Sheet Name",
+                "description": "Name of a specific sheet that containing content health statuses. Note that this is case sensitive",
+                "category": "Health",
                 "default": ""
             }
         ],
@@ -102,7 +102,7 @@
                 "key": "io.supernova.documentation-main.component-health",
                 "category": "Component Blocks",
                 "title": "Static Health",
-                "description": "Show static component health information",
+                "description": "Show static content health information",
                 "icon": "icons/component-health.png",
                 "mode": "block",
                 "properties": [{
@@ -152,7 +152,7 @@
                 "key": "io.supernova.documentation-main.component-health-dynamic",
                 "category": "Component Blocks",
                 "title": "Dynamic Health",
-                "description": "Show component health information from API",
+                "description": "Show content health information from API",
                 "icon": "icons/component-health.png",
                 "mode": "block",
                 "properties": [{
@@ -166,7 +166,7 @@
                 "key": "io.supernova.documentation-main.component-health-dynamic-list",
                 "category": "Component Blocks",
                 "title": "Dynamic Health List",
-                "description": "Show component health information about all components from API",
+                "description": "Show full information about all content from API",
                 "icon": "icons/component-health.png",
                 "mode": "block",
                 "properties": [{
