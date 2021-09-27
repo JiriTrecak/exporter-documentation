@@ -74,10 +74,15 @@
             {[ inject "page_body_structure_block" context block /]}
         {[/]}
         </div>
+          
         </section>
-        {[ inject "page_body_structure_content" context page /]}
       </div>
+
+      {* Add footer - always enabled *}
+      {[ inject "page_body_structure_footer" context page /]}
     </div>
+
+
   </div>
   <!-- Content end --> 
   

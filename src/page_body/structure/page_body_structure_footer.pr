@@ -1,0 +1,15 @@
+
+<div style="width: 100%; height: 100px; display: flex; justify-items: center; align-items: center; justify-content: center; margin: 100px 0px 60px 0px">
+    <img style="width: 80px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoZWFydDMiIHZpZXdCb3g9Ii00NjYgNzIxIDY2IDYwIj48c3R5bGU+LmhlYXJ0LWNvbG9yLWRhcmt7ZmlsbDojMmQyNzY5fS5oZWFydC1jb2xvci1tZWRpdW17ZmlsbDojNmY2MmQwfS5oZWFydC1jb2xvci1saWdodHtmaWxsOiNjMWMxZjd9PC9zdHlsZT48cGF0aCBkPSJNLTQzMyA3ODFsLTI3LjItMjcuMmMtNy41LTcuNS03LjUtMTkuNyAwLTI3LjJzMTkuNy03LjUgMjcuMiAwVjc4MXoiIGNsYXNzPSJoZWFydC1jb2xvci1kYXJrIi8+PHBhdGggZD0iTS00MzMgNzgxbDI3LjItMjcuMmM3LjUtNy41IDcuNS0xOS43IDAtMjcuMnMtMTkuNy03LjUtMjcuMiAwVjc4MXoiIGNsYXNzPSJoZWFydC1jb2xvci1tZWRpdW0iLz48cGF0aCBkPSJNLTQxNS4yIDczNC43Yy00LjUtNC41LTExLjgtNC41LTE2LjQgMGwtMS40IDEuNHYzMi44bDE3LjgtMTcuOGM0LjUtNC42IDQuNS0xMS45IDAtMTYuNHoiIGNsYXNzPSJoZWFydC1jb2xvci1saWdodCIvPjxwYXRoIGQ9Ik0tNDMzIDczNi4xbC0xLjQtMS40Yy00LjUtNC41LTExLjktNC41LTE2LjQgMC00LjUgNC41LTQuNSAxMS45IDAgMTYuNGwxNy44IDE3Ljh2LTMyLjh6IiBjbGFzcz0iaGVhcnQtY29sb3ItbWVkaXVtIi8+PHBhdGggZD0iTS00MzMgNzQ1bC0yLjUtMi41Yy0xLjctMS43LTQuMy0xLjctNiAwcy0xLjcgNC4zIDAgNmwyLjUgMi41IDYgNnYtMTJ6IiBjbGFzcz0iaGVhcnQtY29sb3ItbGlnaHQiLz48cGF0aCBkPSJNLTQzMyA3NDVsMi41LTIuNWMxLjctMS43IDQuMy0xLjcgNiAwczEuNyA0LjMgMCA2bC0yLjUgMi41LTYgNnYtMTJ6IiBjbGFzcz0iaGVhcnQtY29sb3ItZGFyayIvPjwvc3ZnPg==" alt="Heart Graphic">
+</div>
+<div class="footer" style="
+    background-color: #f3f3f3;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    height: 80px;
+    padding-left: 80px;
+    font-size: 14px;
+    align-items: center;"
+>Created as an homage to &nbsp;<a href="https://seeds.sproutsocial.com/brand/" target="_blank">Sprout Social's Design System, Seeds</a>. Thanks for pushing Design Systems further!</div>

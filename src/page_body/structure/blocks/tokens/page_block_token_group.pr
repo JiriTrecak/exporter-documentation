@@ -16,20 +16,13 @@
     {* Render all tokens *}
     {[ for token in ds.tokensByGroupId(group.id) ]}
     <tr class="color">
-        <td>{[ inject "page_block_token_preview_small" context token /]}</td>
-        <td>{{ token.name }}</td>
-        <td>{{ token.description ? token.description : "No description" }}</td>
         <td>
-        {[ inject "page_block_token_value" context token /]}       
-        {[ for prop in token.properties ]}
-            {[ if prop.type.equals("String") ]}
-                {[ if prop.value ]}
-                    <br /><span class="label">{{ prop.name }}</span>: <span class="custom-value">{{ prop.value.toString() }}</span>
-                {[/]}
-            {[ else ]}
-                <br /><span class="label">{{ prop.name }}</span>: <span class="custom-value">{{ prop.value.toString() }}</span>
-            {[/]}
+        {[ if (token.tokenType === "Color") ]}
+            <div class="token-sprout-wrapper" data-toggle="tooltip" data-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>' title="#{{ token.value.hex.substring(0, 6) }}">{[ inject "page_block_token_preview_small" context token /]} {{ formattedFullTokenName(token, group) }}</div>
+        {[ else ]}
+            <div class="token-sprout-wrapper">{[ inject "page_block_token_preview_small" context token /]} {{ formattedFullTokenName(token, group) }}</div>
         {[/]}
+            
         </td>
     </tr>
     {[/]}

@@ -1,7 +1,7 @@
 {
     "id": "io.jiritrecak.sprout",
-    "name": "Sprout",
-    "description": "Supernova homage to Sprout design system",
+    "name": "Seeds Design System",
+    "description": "Supernova homage to Sprout Social's Seeds Design System",
     "author": "Jiri Trecak",
     "organization": "Supernova",
     "source_dir": "src",

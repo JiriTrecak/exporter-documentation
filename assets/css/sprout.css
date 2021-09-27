@@ -9,7 +9,7 @@ html {
 }
 
 .logo-wrapper {
-    width: 318px;
+    width: 320px;
     height: 80px;
     display: flex;
     justify-content: left;
@@ -20,7 +20,7 @@ html {
 }
 
 .docs-navigation {
-    width: 318px;
+    width: 320px;
     border-right: 0px;
 }
 
@@ -118,4 +118,74 @@ html {
 
 .docs-content>.container {
     justify-content: left;
+}
+
+#section-content-page {
+    max-width: none;
+}
+
+.container section p,
+.container section blockquote,
+.container div.alert,
+.container ul,
+.container li {
+    max-width: 750px;
+}
+
+h4 {
+    margin: 0px;
+    font-weight: 500;
+}
+
+.container-title {
+    width: 100%;
+    background-color: transparent;
+    /* margin-bottom: 40px; */
+    border-bottom: 0px;
+}
+
+#main-wrapper {
+    overflow-x: clip;
+}
+
+.token-container table tr td:nth-child(1) {
+    width: 200px;
+    vertical-align: top;
+    padding: 6px 0px;
+    display: flex;
+    margin-left: 40px;
+}
+
+.token-preview-container {
+    width: 14px;
+    height: 14px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.token-sprout-wrapper {
+    display: flex;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #e4dede;
+    min-width: 0px;
+    cursor: pointer;
+}
+
+.token-container table tr {
+    border: 0px;
+    height: auto;
+}
+
+.token-container table {
+    border: 0px;
+}
+
+.tooltip-inner {
+    background-color: white;
+    color: black;
+    border-radius: 999px;
+    border: 1px solid #e4dede;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

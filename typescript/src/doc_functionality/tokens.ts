@@ -22,6 +22,14 @@ export function formattedTokenGroupHeader(tokenGroup: TokenGroup, showSubpath: b
   }
 }
 
+/**  Convert name into properly formatted header */
+export function formattedFullTokenName(token: Token, tokenGroup: TokenGroup) {
+  // Retrieve token group either including or not including the path to the group
+  let segments = [...tokenGroup.path, tokenGroup.name, token.name]
+  let name = segments.join(".").replace(" ", ".").toLowerCase()
+  return name
+}
+
 /** Describe complex gradient token */
 export function gradientDescription(gradientToken: GradientToken) {
   // Describe gradient as (type) (stop1, stop2 ...)
