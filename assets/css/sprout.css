@@ -291,3 +291,37 @@ pre[class*="language-"] {
 .component-health-row {
     font-size: 16px;
 }
+
+.table {
+    font-size: 16px;
+}
+
+#section-content-page ul li {
+    font: 16px / 1.625 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.sandbox-container-buttons {
+    display: none;
+}
+
+.sandbox-state-wrapper {
+    margin: 30px 0px -20px 0px;
+}
+
+.sandbox-container {
+    margin: 0;
+    background-color: white;
+}
+
+pre[class*="language-"] {
+    background-color: rgb(39, 51, 51) !important;
+}
+
+.sandbox-loader-container,
+.sandbox-container {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.sandbox-container-meta {
+    padding-top: 8px;
+}
