@@ -287,3 +287,7 @@ pre[class*="language-"] {
     font-weight: 300;
     color: rgb(54, 65, 65);
 }
+
+.component-health-row {
+    font-size: 16px;
+}
