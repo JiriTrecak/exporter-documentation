@@ -9,24 +9,42 @@
 {[ let group = ds.tokenGroupById(groupId) /]}
 
 {* If empty filter, show group (shows all), if not, show only group with full name *}
-<div class="token-container">
-    {* Show group header consisting of group segments and current group name *}
-    <p class="token-group-header">{{ formattedTokenGroupHeader(group, true) }}</p>
-    <table class="token-wrapper">
-    {* Render all tokens *}
-    {[ for token in ds.tokensByGroupId(group.id) ]}
-    <tr class="color">
-        <td>
-        {[ if (token.tokenType === "Color") ]}
-            <div class="token-sprout-wrapper" data-toggle="tooltip" data-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>' title="#{{ token.value.hex.substring(0, 6) }}">{[ inject "page_block_token_preview_small" context token /]} {{ formattedFullTokenName(token, group) }}</div>
-        {[ else ]}
-            <div class="token-sprout-wrapper">{[ inject "page_block_token_preview_small" context token /]} {{ formattedFullTokenName(token, group) }}</div>
-        {[/]}
-            
-        </td>
-    </tr>
-    {[/]}
-    </table>
-</div>
 
+{[ if (group.tokenType === "Color") ]}
+    <div class="style-column">
+        <div class="style-row-wrapper header" style="justify-content: flex-start;">
+            <span class="style-icon">&nbsp;</span>
+            <span style="font-size: 16px; margin-top: 2px;">{{ group.name }}</span>
+        </div>
+        {[ for token in ds.tokensByGroupId(group.id) ]}
+        <div class="style-row-wrapper" style="background-color: #{{ token.value.hex }}">
+        <div class="style-row-content-wrapper">
+            <span class="style-row-content"><span style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">{{ group.name }} {{ token.name }}</span></span>
+            <div class="style-options" style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">
+                <span><a href="#" style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">#{{ token.value.hex.substring(0, 6) }}</a></span>
+                <span><a href="#" style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">JS</a></span>
+                <span><a href="#" style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">SASS</a></span>
+                <span><a href="#" style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">CSS</a></span>
+                <span><a href="#" style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">Android</a></span>
+            </div>
+        </div>
+        </div>
+        {[/]}
+    </div>
+{[ else ]}
+    <div class="token-container">
+        {* Show group header consisting of group segments and current group name *}
+        <p class="token-group-header">{{ formattedTokenGroupHeader(group, true) }}</p>
+        <table class="token-wrapper">
+        {* Render all tokens *}
+        {[ for token in ds.tokensByGroupId(group.id) ]}
+        <tr class="color">
+            <td>
+                <div class="token-sprout-wrapper">{[ inject "page_block_token_preview_small" context token /]} {{ formattedFullTokenName(token, group) }}</div>
+            </td>
+        </tr>
+        {[/]}
+        </table>
+    </div>
+{[/]}
 {[/]}

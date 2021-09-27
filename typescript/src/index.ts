@@ -3,7 +3,7 @@
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 // MARK: - Imports
 
-import { experimentalDefaultPageStyle, experimentalForcedPageStyle } from "./doc_functionality/experimental"
+import { contrastingColor, experimentalDefaultPageStyle, experimentalForcedPageStyle } from "./doc_functionality/experimental"
 import { constructDynamicHealthBlock, constructDynamicHealthList, constructGoogleSheetCSVUrl } from "./doc_functionality/health"
 import { firstPageFromTop, firstSubgroupOfPage, pageOrGroupActiveInContext } from "./doc_functionality/lookup"
 import { markdownToHTML } from "./doc_functionality/markdown"
@@ -59,3 +59,6 @@ Pulsar.registerFunction("constructGoogleSheetCSVUrl", constructGoogleSheetCSVUrl
 
 /* Sandbox */
 Pulsar.registerFunction("htmlSafeString", htmlSafeString)
+
+/* Colors */
+Pulsar.registerFunction("contrastingColor", contrastingColor)

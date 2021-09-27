@@ -47,3 +47,9 @@ export function experimentalDefaultPageStyle(page: DocumentationPage): Documenta
     invertHeader: false,
   }
 }
+
+/* Compute whether color should be contrasting or not */
+export function contrastingColor(token: ColorToken, darkColor: string, lightColor: string) {
+
+  return (token.value.r * 0.299 + token.value.g * 0.587 + token.value.b * 0.114) > 186 ? darkColor : lightColor
+}

@@ -1,7 +1,7 @@
 body,
 html {
     height: 100%;
-    font-family: 'system-ui', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font: 112.5% / 1.625 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 .bg-sidebar {
@@ -140,7 +140,7 @@ h4 {
 .container-title {
     width: 100%;
     background-color: transparent;
-    /* margin-bottom: 40px; */
+    margin-bottom: 0px;
     border-bottom: 0px;
 }
 
@@ -149,7 +149,7 @@ h4 {
 }
 
 .token-container table tr td:nth-child(1) {
-    width: 200px;
+    width: 100%;
     vertical-align: top;
     padding: 6px 0px;
     display: flex;
@@ -188,4 +188,102 @@ h4 {
     border-radius: 999px;
     border: 1px solid #e4dede;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    background: rgb(39, 51, 51);
+    border-radius: 8px;
+}
+
+
+/* Token containers */
+
+.style-row-wrapper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 12px 18px;
+    font-weight: 600;
+}
+
+.style-row-content-wrapper {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    flex-direction: initial;
+    -webkit-box-pack: initial;
+    justify-content: space-between;
+}
+
+.style-row-content {
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: rgb(22, 32, 32);
+    font-size: 13px;
+    line-height: 21.3333px;
+    font-weight: 500;
+}
+
+.style-column {
+    overflow: hidden;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid rgb(222, 225, 225);
+    max-width: 50%;
+    margin: 20px 0px;
+}
+
+.style-options {
+    font-size: 12px;
+    font-weight: normal;
+    display: none;
+}
+
+.style-row-wrapper.header {
+    font-weight: 500;
+}
+
+.style-icon {
+    margin-right: 12px;
+    margin-left: 0px;
+    width: 20px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='18' viewBox='0 0 20 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.97003 0.929932L17.04 8C17.2262 8.18736 17.3307 8.44077 17.3307 8.70496C17.3307 8.96914 17.2262 9.22267 17.04 9.41003L9.97003 16.48C9.69132 16.7597 9.36008 16.9815 8.99542 17.1329C8.63077 17.2844 8.23987 17.3623 7.84503 17.3623C7.45019 17.3623 7.05917 17.2844 6.69452 17.1329C6.32986 16.9815 5.99874 16.7597 5.72003 16.48L1.48004 12.24C0.91824 11.6775 0.6026 10.915 0.6026 10.12C0.6026 9.32499 0.91824 8.5625 1.48004 8L4.31 5.17004L1.48004 2.33997C1.29379 2.1526 1.18927 1.8992 1.18927 1.63501C1.18927 1.37082 1.29379 1.11729 1.48004 0.929932C1.573 0.836203 1.68362 0.761828 1.80548 0.71106C1.92734 0.660291 2.05799 0.634155 2.19 0.634155C2.32201 0.634155 2.45266 0.660291 2.57452 0.71106C2.69638 0.761828 2.807 0.836203 2.89996 0.929932L5.73004 3.76001L8.54999 0.929932C8.64295 0.836203 8.75357 0.761828 8.87543 0.71106C8.99729 0.660291 9.12794 0.634155 9.25995 0.634155C9.39196 0.634155 9.52273 0.660291 9.64459 0.71106C9.76645 0.761828 9.87707 0.836203 9.97003 0.929932ZM7.13995 8L5.72003 6.57996L2.89996 9.41003C2.80548 9.50265 2.73039 9.61299 2.67889 9.73486C2.6274 9.85674 2.60059 9.98769 2.60004 10.12H13.5001L14.92 8.70996L9.25995 3.04993L7.13995 5.17004L8.54999 6.57996C8.64323 6.67254 8.71729 6.78259 8.76801 6.90381C8.81872 7.02502 8.84506 7.1551 8.84552 7.2865C8.84598 7.41789 8.82067 7.54799 8.77081 7.66956C8.72096 7.79113 8.64757 7.90176 8.55499 7.995C8.46241 8.08823 8.35236 8.1623 8.23114 8.21301C8.10992 8.26372 7.97997 8.29006 7.84857 8.29053C7.71718 8.29099 7.58696 8.26555 7.46539 8.2157C7.34382 8.16584 7.23319 8.09258 7.13995 8ZM17.58 11.22L19.19 14.36C19.3317 14.6359 19.4001 14.9437 19.3887 15.2537C19.3773 15.5636 19.2865 15.8655 19.1248 16.1302C18.9632 16.395 18.7363 16.6137 18.4658 16.7655C18.1952 16.9173 17.8902 16.9971 17.58 16.9971C17.2698 16.9971 16.9648 16.9173 16.6943 16.7655C16.4238 16.6137 16.1969 16.395 16.0352 16.1302C15.8736 15.8655 15.7826 15.5636 15.7712 15.2537C15.7598 14.9437 15.8283 14.6359 15.97 14.36L17.58 11.22Z' fill='%23182020'/%3E%3C/svg%3E%0A");
+}
+
+.style-row-wrapper:hover .style-options {
+    display: block;
+}
+
+.token-container .grid>div {
+    border: none;
+    flex: 0 1 30%;
+    margin-right: 16px;
+}
+
+.token-container .grid>div>div.preview {
+    border-radius: 10px;
+}
+
+.token-container .grid>div .token-sprout-wrapper {
+    margin: 12px 0px;
+    font-size: 12px;
+}
+
+.token-container .grid {
+    justify-content: left;
+}
+
+.container section p {
+    font: 18px / 1.625 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    color: rgb(54, 65, 65);
 }
