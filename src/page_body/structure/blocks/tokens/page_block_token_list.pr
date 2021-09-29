@@ -15,7 +15,7 @@
          {[ if (token.tokenType === "Color") ]}
             {[ let group = ds.tokenGroupContainingTokenId(tokenId) /]}
             <div style="display: flex">
-            <div class="token-sprout-wrapper" data-toggle="tooltip" data-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>' title="#{{ token.value.hex.substring(0, 6) }}">{[ inject "page_block_token_preview_small" context token /]} {{ formattedFullTokenName(token, group) }}</div>
+            <div class="token-sprout-wrapper" data-toggle="tooltip" data-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>' title="#{{ token.value.hex.substring(0, 6) }}">{[ inject "page_block_token_preview_small" context token /]} {{ token.name.replacing(" ", ".").lowercased() }}</div>
             </div>
         {[ else ]}
           <p class="title">{{ token.name }}</p>

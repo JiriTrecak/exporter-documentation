@@ -23,7 +23,9 @@
             {* Re-enable if we only want to show groups *}
             {* {[ if item.type.equals("Group") ]} *}
             {[ if pageOrGroupActiveInContext(page, item) ]}
+            {[ if (item.type === "Group") ]}
                 <h4>{{ item.title }}</h4>
+            {[/]}
             {[/]}
             {* {[/]} *}
         {[/]}

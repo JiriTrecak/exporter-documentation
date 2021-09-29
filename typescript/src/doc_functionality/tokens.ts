@@ -26,7 +26,8 @@ export function formattedTokenGroupHeader(tokenGroup: TokenGroup, showSubpath: b
 export function formattedFullTokenName(token: Token, tokenGroup: TokenGroup) {
   // Retrieve token group either including or not including the path to the group
   let segments = [...tokenGroup.path, tokenGroup.name, token.name]
-  let name = segments.join(".").replace(" ", ".").toLowerCase()
+  let uniqueSegments = [... new Set(segments)]
+  let name = uniqueSegments.join(".").replace(" ", ".").toLowerCase()
   return name
 }
 

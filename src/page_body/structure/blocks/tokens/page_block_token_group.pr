@@ -19,7 +19,7 @@
         {[ for token in ds.tokensByGroupId(group.id) ]}
         <div class="style-row-wrapper" style="background-color: #{{ token.value.hex }}">
         <div class="style-row-content-wrapper">
-            <span class="style-row-content"><span style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">{{ group.name }} {{ token.name }}</span></span>
+            <span class="style-row-content"><span style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">{{ token.name }}</span></span>
             <div class="style-options" style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">
                 <span><a href="#" style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">#{{ token.value.hex.substring(0, 6) }}</a></span>
                 <span><a href="#" style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">JS</a></span>
