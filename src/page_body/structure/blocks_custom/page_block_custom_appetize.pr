@@ -42,7 +42,7 @@
 {[ let simViewKey = block.properties.simViewKey /]}
 {[ if (simViewKey && simViewKey.count() > 0) ]}
     {* Render the embedded block with custom configuration and sizes *}
-    {[ let appetizeUrl = ("https://appetize.io/embed/" + simViewKey + "?xdocMsg=true&autoplay=true&device=pixel4&screenOnly=true&scale=" + (scale * scaleModifier)) /]}
+    {[ let appetizeUrl = ("https://appetize.io/embed/" + simViewKey + "?xdocMsg=true&autoplay=true&device=" + device + "&screenOnly=true&scale=" + (scale * scaleModifier)) /]}
     <div style="display: flex; justify-content: center;">
         <iframe src="{{ appetizeUrl }}" style="width: {{ width * scaleModifier }}px; height: {{ height * scaleModifier }}px;" width="{{ width * scaleModifier }}" height="{{ height * scaleModifier }}">
         </iframe>
