@@ -194,11 +194,12 @@
                     "label": "Sim Key"
                 }, {
                     "key": "device",
-                    "default": "iphonex",
+                    "default": "pixel4",
                     "values": [
-                        "iphonex",
-                        "iphone11pro",
-                        "ipadair"
+                        "nexus9",
+                        "pixel4",
+                        "pixel4xl",
+                        "galaxytabs7"
                     ],
                     "label": "Device",
                     "type": "enum"
@@ -217,15 +218,14 @@
                     "label": "Sim Key"
                 }, {
                     "key": "device",
-                    "default": "pixel4",
-                    "values": [
-                        "nexus9",
-                        "pixel4",
-                        "pixel4xl",
-                        "galaxytabs7"
-                    ],
                     "label": "Device",
-                    "type": "enum"
+                    "type": "enum",
+                    "default": "iphonex",
+                    "values": [
+                        "iphonex",
+                        "iphone11pro",
+                        "ipadair"
+                    ]
                 }]
             }
         ]

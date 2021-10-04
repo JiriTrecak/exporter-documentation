@@ -1,0 +1,53 @@
+{* Get appetize block payload *}
+{[ const block = context /]}
+
+{* Set sim size for preview based on device coming from block *}
+{[ let device = block.properties.device /]}
+{[ let width = 0 /]}
+{[ let height = 0 /]}
+
+{[ let scale = 100 /]}
+{* Allow to scale the view from base size to something smaller *}
+{[ let scaleModifier = 0.8 /]}
+
+{[ switch device ]}
+    {* Note I have normalized all sizes by hand to preserve aspect but be bound bound by 375 in one axis. This, of course, can be freely changed. *}
+    {[ case "nexus9" ]}
+        {[ width = 375 /]}
+        {[ height = 500 /]}
+    {[ case "pixel4" ]}
+        {[ width = 375 /]}
+        {[ height = 792 /]}
+    {[ case "pixel4xl" ]}
+        {[ width = 375 /]}
+        {[ height = 792 /]}
+    {[ case "galaxytabs7" ]}
+        {[ width = 375 /]}
+        {[ height = 828 /]}
+    {[ case "iphonex" ]}
+        {[ width = 375 /]}
+        {[ height = 812 /]}
+    {[ case "iphone11pro" ]}
+        {[ width = 375 /]}
+        {[ height = 812 /]}
+    {[ case "ipadair" ]}
+        {[ width = 375 /]}
+        {[ height = 500 /]}
+    {[ default ]}
+        {[ width = 375 /]}
+        {[ height = 667 /]}
+{[/]}
+
+{* Create apperize embed block by creating custom URL *}
+{[ let simViewKey = block.properties.simViewKey /]}
+{[ if (simViewKey && simViewKey.count() > 0) ]}
+    {* Render the embedded block with custom configuration and sizes *}
+    {[ let appetizeUrl = ("https://appetize.io/embed/" + simViewKey + "?xdocMsg=true&autoplay=true&device=pixel4&screenOnly=true&scale=" + (scale * scaleModifier)) /]}
+    <div style="display: flex; justify-content: center;">
+        <iframe src="{{ appetizeUrl }}" style="width: {{ width * scaleModifier }}px; height: {{ height * scaleModifier }}px;" width="{{ width * scaleModifier }}" height="{{ height * scaleModifier }}">
+        </iframe>
+    </div>
+{[ else ]}
+    {* Should the key not be provided, just add info about it *}
+    <p>Embedded appetize device is missing the embedding key, please provide it inside editor to render appropriate sandbox</p>
+{[/]}
