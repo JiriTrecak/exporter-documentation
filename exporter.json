@@ -1,12 +1,12 @@
 {
     "id": "io.jiritrecak.sprout",
-    "name": "Seeds Design System",
+    "name": "Jiri's Template",
     "description": "Supernova homage to Sprout Social's Seeds Design System",
     "author": "Jiri Trecak",
     "organization": "Supernova",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "config": {
         "sources": "sources.json",
         "output": "output.json",
