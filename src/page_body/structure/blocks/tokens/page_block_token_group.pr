@@ -6,7 +6,8 @@
 
 {* Fetch all tokens of this specific group *}
 {[ const groupId = block.groupId /]}
-{[ let group = ds.tokenGroupById(groupId) /]}
+{[ let brand = ds.currentBrand() /]}
+{[ let group = ds.tokenGroupById(groupId, brand.id) /]}
 
 {* If empty filter, show group (shows all), if not, show only group with full name *}
 
@@ -16,7 +17,7 @@
             <span class="style-icon">&nbsp;</span>
             <span style="font-size: 16px; margin-top: 2px;">{{ group.name }}</span>
         </div>
-        {[ for token in ds.tokensByGroupId(group.id) ]}
+        {[ for token in ds.tokensByGroupId(group.id, brand.id) ]}
         <div class="style-row-wrapper" style="background-color: #{{ token.value.hex }}">
         <div class="style-row-content-wrapper">
             <span class="style-row-content"><span style="color: {{ contrastingColor(token, "#000000", "#ffffff") }}">{{ token.name }}</span></span>
@@ -37,7 +38,7 @@
         <p class="token-group-header">{{ formattedTokenGroupHeader(group, true) }}</p>
         <table class="token-wrapper">
         {* Render all tokens *}
-        {[ for token in ds.tokensByGroupId(group.id) ]}
+        {[ for token in ds.tokensByGroupId(group.id, brand.id) ]}
         <tr class="color">
             <td>
                 <div class="token-sprout-wrapper">{[ inject "page_block_token_preview_small" context token /]} {{ formattedFullTokenName(token, group) }}</div>
