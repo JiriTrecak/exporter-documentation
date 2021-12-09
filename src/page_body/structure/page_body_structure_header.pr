@@ -1,5 +1,5 @@
 {[ let page = context /]}
-{[ const domain = ds.documentationConfiguration().domain /]}
+{[ const domain = ds.documentationDomain() /]}
 {[ const shouldShowTabbar = ds.documentationConfiguration().settings.tabbedNavigation /]}
 
 <!-- Header --> 
@@ -33,7 +33,7 @@
                         {* Re-enable if we only want to show groups *}
                         {* {[ if item.type.equals("Group") ]} *}
                             {[ let activeClass = (pageOrGroupActiveInContext(page, item) === true ? "active" : "") /]}
-                            <li><a class="typographyDocsViewNavigation {{ activeClass }}" href="{{ pageUrl(item, ds.documentationConfiguration().domain) }}">{{ item.title }}</a></li>
+                            <li><a class="typographyDocsViewNavigation {{ activeClass }}" href="{{ pageUrl(item, ds.documentationDomain()) }}">{{ item.title }}</a></li>
                         {* {[/]} *}
                     {[/]}
                 {[/]}
@@ -62,7 +62,7 @@
                         {* Re-enable if we only want to show groups *}
                         {* {[ if item.type.equals("Group") ]} *}
                             {[ let activeClass = (pageOrGroupActiveInContext(page, item) === true ? "checked" : "") /]}
-                            <a class="dropdown-item {{ activeClass }}" href="{{ pageUrl(item, ds.documentationConfiguration().domain) }}">{{ item.title }}</a>
+                            <a class="dropdown-item {{ activeClass }}" href="{{ pageUrl(item, ds.documentationDomain()) }}">{{ item.title }}</a>
                         {* {[/]} *}
                     {[/]}
                 </div>

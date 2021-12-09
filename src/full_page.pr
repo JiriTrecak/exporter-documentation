@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {[ inject "page_head" context page /]}
-{[ const domain = ds.documentationConfiguration().domain /]}
+{[ const domain = ds.documentationDomain() /]}
 
 <body class="light">
 {* <body class="{{ exportConfiguration().defaultVisualMode }}"> *}
