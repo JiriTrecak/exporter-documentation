@@ -1,39 +1,53 @@
 {* Fetch block from injection context, expected type 'Code' *}
 {[ const block = context /]}
 
+{* Set background color. Note that currently, background color is provided by SDK by default (#f9f9faff), and it will be changed
+   soon so it actually comes as null - meaning it wasn't forced in the editor. 
+   We are going around it and treating the default as null. Nasty workaround, but will be fixed, pinky promise :)
+*}
+{[ let backgroundColor = "transparent" /]}
+{[ let showChecker = true /]}
+{[ if (block.backgroundColor != "#f9f9faff") ]}
+    {[ backgroundColor = block.backgroundColor /]}
+    {[ showChecker = false /]}
+{[/]}
+
 {* Generate unique ID for the sandbox, and retrieve its configuration *}
 {[ const sandboxId = randomInt(0, 99999999).toString().prefixed("sandbox-") /]}
 
 {* Generate sandbox code which will be automatically converted to live sandbox *}
-<div class="sandbox-state-wrapper">
-    <div class="sandbox-loader-container" data-target="{{ sandboxId }}">
-        <div class="sandbox-loader"></div>
-        <span>Preparing live component</span>
+<div class="sandbox-main-wrapper">
+    {* Render sandbox. Sandbox will be triggered by the library automatically, this is just wrapper *}
+    <div class="sandbox-state-wrapper">
+        <div class="sandbox-loader-container" data-target="{{ sandboxId }}">
+            <div class="sandbox-loader"></div>
+        </div>
+        <div class="sandbox-container {{ showChecker ? "checkered-background-light" : ""}}" style="height: {{ block.height.toString() }}px; background-color: {{ backgroundColor }}">
+            <div id="{{ sandboxId }}" sn-sandbox-data="{{ block.sandboxData }}"></div>
+        </div>
     </div>
-    <div class="sandbox-container" style="height: {{ block.height.toString() }}">
-        <div id="{{ sandboxId }}" sn-sandbox-data="{{ block.sandboxData }}"></div>
-    </div>
-</div>
-<div class="sandbox-container-meta">
-
-    <div class="sandbox-container-buttons">
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Toggle code" data-offset="5">
-            <i class="fas fa-code" data-toggle="collapse" data-target="#codepreview-{{ sandboxId }}"></i>
-        </span>
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Copy code">
-            <i class="fas fa-copy" data-toggle="copy-from-sandbox" data-target="{{ sandboxId }}"></i>
-        </span>
-    </div>
-
-    {[ let shouldShow = "" /]}
+    {* Only show code if the editor allows it *}
     {[ if block.showCode ]}
-        {[ shouldShow = "show" /]}
-    {[/]}
-    <div class="sandbox-text collapse {{ shouldShow }}" id="codepreview-{{ sandboxId }}">
-        <pre><code class="language-javascript">
+    <div class="sandbox-container-meta">
 
-        {{ htmlSafeString(block.code) }}
-        
-        </code></pre>
+        <div class="sandbox-container-buttons">
+        {* Toggle code button *}
+        <a class="btn btn-light" data-toggle="collapse" href="#codepreview-{{ sandboxId }}" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Toggle code
+        </a>
+
+        {* Copy code button *}
+        <a class="btn btn-light sandbox-copy" data-toggle="tooltip" title="Copy component code">
+            <div class="sandbox-copy-icon" data-toggle="copy-from-sandbox" data-target="{{ sandboxId }}"></div>
+        </a>
+        </div>
+
+        {* Rendered code *}
+        <div class="sandbox-text collapse" id="codepreview-{{ sandboxId }}">
+            <pre><code class="language-javascript">
+            {{ htmlSafeString(block.code) }}
+            </code></pre>
+        </div>
     </div>
+    {[/]}
 </div>

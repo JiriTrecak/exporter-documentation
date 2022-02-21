@@ -1,5 +1,7 @@
-{* Get experimental block payload *}
-{[ const block = context /]}
+{* Get block payload. We are fetching both block and group from context as we want to reuse this blueprint for different groups, not just the one defined inside block itself *}
+{[ const block = context.block /]}
+{[ const group = context.group /]}
+{[ const tokens = ds.tokensByGroupId(group.id) /]}
 
 {* Ignore block if it doesn't have group id set *}
 {[ if block.groupId ]}
@@ -48,3 +50,4 @@
     </div>
 {[/]}
 {[/]}
+            

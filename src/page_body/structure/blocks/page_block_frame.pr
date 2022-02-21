@@ -1,19 +1,27 @@
-{[ const frame = context /]}
-{[ let backgroundColor = "#f2f4f5" /]}
-{[ if frame.backgroundColor ]}
-    {[ backgroundColor = frame.backgroundColor /]}
+{[ const frame = context.frame /]}
+
+{* Decide on properties *}
+{[ let backgroundColor = "transparent" /]}
+{[ let showChecker = true /]}
+{[ if (frame.backgroundColor && frame.backgroundColor.value) ]}
+    {* Only raw values are currently supported, tokens soon *}
+    {[ backgroundColor = frame.backgroundColor.value /]}
+    {[ showChecker = false /]}
 {[/]}
-<div>      
-    <div class="preview frame" style="background-color: {{ backgroundColor }};">
+
+<div class="{{ !context.showTitles ? "titleless" : "" }}">      
+    <div class="preview frame {{ showChecker ? "checkered-background-light" : ""}}" style="background-color: {{ backgroundColor }}">
     {[ if frame.previewUrl ]}
         <img src="{{ frame.previewUrl }}" />
     {[/]}
     
     </div>
-    {[ if frame.title ]}
-        <p class="title">{{ frame.title }}</p>
-    {[/]}
-    {[ if frame.description ]}
-        <p class="description">{{ frame.description }}</p>    
+    {[ if context.showTitles ]}
+        {[ if frame.title ]}
+            <p class="title">{{ frame.title }}</p>
+        {[/]}
+        {[ if frame.description ]}
+            <p class="description">{{ frame.description }}</p>    
+        {[/]}
     {[/]}
 </div>

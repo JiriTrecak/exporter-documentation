@@ -6,7 +6,7 @@
     "organization": "Supernova",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.13",
+    "version": "1.21",
     "usesBrands": false,
     "config": {
         "sources": "sources.json",
@@ -43,192 +43,166 @@
                 "type": "image",
                 "label": "Header Logo",
                 "description": "Company logo to be shown on all pages inside the documentation site. 200x30px .svg or .png is recommended",
-                "category": "Design"
+                "category": "Look & Feel"
             },
             {
                 "key": "favicon",
                 "type": "image",
                 "label": "Site Favicon",
                 "description": "Documentation site favicon. 32x32px .png is recommended, using legacy .ico is discouraged",
-                "category": "Design"
+                "category": "Look & Feel"
             },
             {
-                "key": "metaTitlePrefix",
-                "type": "string",
-                "label": "Meta Title Prefix",
-                "description": "Meta title of the documentation page. Page name will also be added to the title",
-                "category": "SEO",
-                "default": "Documentation | "
+                "key": "seoEnableIndexing",
+                "type": "boolean",
+                "label": "Enable Search Engine Indexing",
+                "description": "When enabled, documentation site will be indexed by search engines. Note that only public documentation sites can be indexed",
+                "category": "Search Engines",
+                "default": true
             },
             {
-                "key": "metaDescription",
+                "key": "seoEnableLinkFollowing",
+                "type": "boolean",
+                "label": "Enable Search Engine Link Follow",
+                "description": "When enabled, search robots will follow the links on the indexed pages",
+                "category": "Search Engines",
+                "default": true
+            },
+            {
+                "key": "seoGenerateSitemap",
+                "type": "boolean",
+                "label": "Generate Sitemap",
+                "description": "When enabled, documentation sitemap will be re-generated on every publish",
+                "category": "Search Engines",
+                "default": true
+            },
+            {
+                "key": "seoTitlePrefix",
                 "type": "string",
-                "label": "Meta Description",
-                "description": "Meta description of the documentation site",
-                "category": "SEO",
+                "label": "Site Title Prefix",
+                "description": "When provided, page title will be prefixed with this string",
+                "category": "Search Engines",
                 "default": ""
             },
             {
-                "key": "componentHealthSourceIdentifier",
+                "key": "seoTitleSuffix",
                 "type": "string",
-                "label": "Content Health Sheet Identifier",
-                "description": "Google Sheets identifier that points to a google sheets file containing content health statuses",
-                "category": "Health",
+                "label": "Site Title Suffix",
+                "description": "When provided, page title will be suffixed with this string",
+                "category": "Search Engines",
+                "default": " | Made with Supernova"
+            },
+            {
+                "key": "seoTitleOverride",
+                "type": "string",
+                "label": "Site Title Override",
+                "description": "When provided, title will be completely overriden by this string for all site pages. Prefix is ignored in this case",
+                "category": "Search Engines",
                 "default": ""
             },
             {
-                "key": "componentHealthSourceName",
+                "key": "seoDescriptionPrefix",
                 "type": "string",
-                "label": "Content Health Sheet Name",
-                "description": "Name of a specific sheet that containing content health statuses. Note that this is case sensitive",
-                "category": "Health",
+                "label": "Site Description Prefix",
+                "description": "When provided, page description will be prefixed with this string",
+                "category": "Search Engines",
                 "default": ""
+            },
+            {
+                "key": "seoDescriptionSuffix",
+                "type": "string",
+                "label": "Site Description Suffix",
+                "description": "When provided, page description will be suffixed with this string",
+                "category": "Search Engines",
+                "default": " | Design system documentation, made with ❤️ using Supernova"
+            },
+            {
+                "key": "seoDescriptionOverride",
+                "type": "string",
+                "label": "Site Description Override",
+                "description": "When provided, page description will use this string. Otherwise, page description is generated dynamically from page subheading (if any) or its content.",
+                "category": "Search Engines",
+                "default": ""
+            },
+            {
+                "key": "seoSiteImage",
+                "type": "image",
+                "label": "Site Image Override",
+                "description": "When provided, page description will use this string. Otherwise, page description is generated dynamically from page subheading (if any) or its content.",
+                "category": "Search Engines"
+            },
+            {
+                "key": "advancedCustomizationShowNextPreviousNavigation",
+                "type": "boolean",
+                "label": "Show Next / Previous navigation",
+                "description": "When enabled, will show bottom page navigation with quick links to next and previous pages",
+                "category": "Advanced",
+                "default": true
+            },
+            {
+                "key": "advancedCustomizationShowFooter",
+                "type": "boolean",
+                "label": "Show Footer",
+                "description": "Any custom javascript to change the documentation behavior. Custom JS will be injected last after DOM is loaded.",
+                "category": "Advanced",
+                "default": true
+            },
+            {
+                "key": "advancedCustomizationCustomFooter",
+                "type": "string",
+                "label": "Custom Footer Code",
+                "description": "When footer is shown, the footer can be fully customized by changing its HTML representation. Add links, lines or even images, any html will work.",
+                "category": "Advanced",
+                "isMultiline": true,
+                "inputType": "code",
+                "default": "<div class=\"container-footer\"\">\r\n    <div class=\"slider\">\r\n        <div class=\"row\">\r\n        <div class=\"col-5\">\r\n            <h5>My Doc Site<\/h5>\r\n            <p class=\"d-block mb-3\">This footer can be completely changed through Supernova customization options. Head to site advanced customization to learn more!<\/p>\r\n            <p class=\"d-block mb-3 text-muted\">&copy; 2022 My Amazing Company<\/p>\r\n        <\/div>\r\n        <div class=\"col-3 offset-1\">\r\n        <h5>Resources<\/h5>\r\n        <ul class=\"list-unstyled\">\r\n            <li><a href=\"#\">Changelog<\/a><\/li>\r\n            <li><a href=\"#\">Storybook<\/a><\/li>\r\n            <li><a href=\"#\">Figma<\/a><\/li>\r\n        <\/ul>\r\n        <\/div>\r\n        <div class=\"col-3\">\r\n        <h5>Support<\/h5>\r\n        <ul class=\"list-unstyled\">\r\n            <li><a href=\"#\">Report issue<\/a><\/li>\r\n            <li><a href=\"#\">Terms & Conditions<\/a><\/li>\r\n            <li><a href=\"#\">Privacy Policy<\/a><\/li>\r\n        <\/ul>\r\n        <\/div>\r\n    <\/div>\r\n    <\/div>\r\n<\/div>"
+            },
+            {
+                "key": "advancedCustomizationCustomCSS",
+                "type": "string",
+                "label": "Custom CSS",
+                "description": "Any custom styles to change the documentation look & feel. Custom CSS is injected last, overriding everything before it.",
+                "category": "Advanced",
+                "default": "body,\r\nhtml {\r\n    font-family: Inter, sans-serif;\r\n}",
+                "isMultiline": true,
+                "inputType": "code"
+            },
+            {
+                "key": "advancedCustomizationCustomFonts",
+                "type": "string",
+                "label": "Custom Font - Header",
+                "description": "Fonts you want loaded into your site. You can load multiple fonts at the same time. Icon fonts are also supported.",
+                "category": "Advanced",
+                "default": "<link href=\"https:\/\/fonts.googleapis.com\/css2?family=Inter:wght@400;500;700&display=swap\" rel=\"stylesheet\">",
+                "isMultiline": true,
+                "inputType": "code"
             }
         ],
         "blocks": [{
-                "key": "io.supernova.documentation-main.markdown",
-                "category": "Remote Data Blocks",
-                "title": "Markdown",
-                "description": "Embed and process markdown from remote URL",
-                "icon": "icons/markdown.png",
-                "mode": "block",
-                "properties": [{
-                    "key": "markdownUrl",
-                    "default": "",
-                    "type": "string",
-                    "label": "Markdown URL"
-                }]
-            },
-            {
-                "key": "io.supernova.documentation-main.component-health",
-                "category": "Component Blocks",
-                "title": "Static Health",
-                "description": "Show static content health information",
-                "icon": "icons/component-health.png",
-                "mode": "block",
-                "properties": [{
-                        "key": "health",
-                        "default": "healthy",
-                        "type": "enum",
-                        "label": "Health",
-                        "values": [
-                            "healthy",
-                            "withering",
-                            "dormant"
-                        ]
-                    },
-                    {
-                        "key": "published",
-                        "default": "",
-                        "type": "string",
-                        "label": "Date Published"
-                    },
-                    {
-                        "key": "updated",
-                        "default": "",
-                        "type": "string",
-                        "label": "Date Updated"
-                    },
-                    {
-                        "key": "designUrl",
-                        "default": "",
-                        "type": "string",
-                        "label": "Design URL"
-                    },
-                    {
-                        "key": "repositoryUrl",
-                        "default": "",
-                        "type": "string",
-                        "label": "Repository URL"
-                    },
-                    {
-                        "key": "info",
-                        "default": "",
-                        "type": "string",
-                        "label": "More Info"
-                    }
-                ]
-            },
-            {
-                "key": "io.supernova.documentation-main.component-health-dynamic",
-                "category": "Component Blocks",
-                "title": "Dynamic Health",
-                "description": "Show content health information from API",
-                "icon": "icons/component-health.png",
-                "mode": "block",
-                "properties": [{
-                    "key": "componentId",
-                    "default": "",
-                    "type": "string",
-                    "label": "Component ID"
-                }]
-            },
-            {
-                "key": "io.supernova.documentation-main.component-health-dynamic-list",
-                "category": "Component Blocks",
-                "title": "Dynamic Health List",
-                "description": "Show full information about all content from API",
-                "icon": "icons/component-health.png",
-                "mode": "block",
-                "properties": [{
-                    "key": "showSummary",
-                    "default": true,
-                    "type": "boolean",
-                    "label": "Show summary"
-                }, {
-                    "key": "showList",
-                    "default": true,
-                    "type": "boolean",
-                    "label": "Show list"
-                }]
-            }, {
-                "key": "io.supernova.documentation-main.appetizeio.android",
-                "category": "Native Blocks",
-                "title": "Appetize.io - Android",
-                "description": "Embed Appetize simulator Android view",
-                "icon": "icons/appetize.png",
-                "mode": "block",
-                "properties": [{
-                    "key": "simViewKey",
-                    "default": "",
-                    "type": "string",
-                    "label": "Sim Key"
-                }, {
-                    "key": "device",
-                    "default": "pixel4",
-                    "values": [
-                        "nexus9",
-                        "pixel4",
-                        "pixel4xl",
-                        "galaxytabs7"
-                    ],
-                    "label": "Device",
-                    "type": "enum"
-                }]
-            }, {
-                "key": "io.supernova.documentation-main.appetizeio.ios",
-                "category": "Native Blocks",
-                "title": "Appetize.io - iOS",
-                "description": "Embed Appetize simulator iOS view",
-                "icon": "icons/appetize.png",
-                "mode": "block",
-                "properties": [{
-                    "key": "simViewKey",
-                    "default": "",
-                    "type": "string",
-                    "label": "Sim Key"
-                }, {
-                    "key": "device",
-                    "label": "Device",
-                    "type": "enum",
-                    "default": "iphonex",
-                    "values": [
-                        "iphonex",
-                        "iphone11pro",
-                        "ipadair"
-                    ]
-                }]
-            }
-        ]
+            "key": "io.supernova.documentation-main.markdown",
+            "category": "Remote Data Blocks",
+            "title": "Markdown",
+            "description": "Embed and process markdown from remote URL",
+            "icon": "icons/markdown.png",
+            "mode": "block",
+            "properties": [{
+                "key": "markdownUrl",
+                "default": "",
+                "type": "string",
+                "label": "Markdown URL"
+            }]
+        }],
+        "blockVariants": {
+            "Tabs": [{
+                    "name": "Tabs",
+                    "id": "tabs",
+                    "isDefault": true
+                },
+                {
+                    "name": "Pills",
+                    "id": "pills"
+                }
+            ]
+        }
     }
 }

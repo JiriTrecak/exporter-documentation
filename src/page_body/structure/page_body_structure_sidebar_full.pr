@@ -40,3 +40,9 @@
         <span class="typographyDocsViewLabelCaps">{{ context.page.title }}</span>
     </div>
 {[/]}
+
+<div class="nav-sn">
+    <a href="https://supernova.io" target="_blank">
+        <img src="{{ assetUrl("logos/powered-by-supernova.png", ds.documentationDomain()) }}" title="Supernova, the most advanced design system platform" alt="Supernova, the most advanced design system platform" />
+    </a>
+</div>
