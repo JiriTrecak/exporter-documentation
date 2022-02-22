@@ -211,6 +211,19 @@
                 "type": "string",
                 "label": "Markdown URL"
             }]
+        }, {
+            "key": "io.supernova.documentation-main.component-health-dynamic",
+            "category": "Component Blocks",
+            "title": "Dynamic Health",
+            "description": "Show component health information from API",
+            "icon": "icons/component-health.png",
+            "mode": "block",
+            "properties": [{
+                "key": "componentId",
+                "default": "",
+                "type": "string",
+                "label": "Component ID"
+            }]
         }],
         "blockVariants": {
             "Tabs": [{
