@@ -40,9 +40,9 @@
         <div style="width: 20px; height: 20px; box-shadow: {{ scaledShadowTokenValue(token, 4) }}"></div>
     </div>
 {[ elseif token.tokenType.equals("Text")]}
-    <div class="token-preview-container">T</div>
+    <div class="token-preview-container-text">Tx</div>
 {[ elseif token.tokenType.equals("Typography")]}
-    <div class="token-preview-container">Ag</div>
+    <div class="token-preview-container-text">Ag</div>
 {[ elseif token.tokenType.equals("GenericToken")]}
-    <div class="token-preview-container">X</div>
+    <div class="token-preview-container-text">Tx</div>
 {[/]}

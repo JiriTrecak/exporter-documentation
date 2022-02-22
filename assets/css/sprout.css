@@ -164,6 +164,14 @@ h4 {
     margin-top: 2px;
 }
 
+.token-preview-container-text {
+    width: 24px;
+    height: 20px;
+    color: green;
+    margin-right: 0px;
+    margin-top: 0px;
+}
+
 .token-sprout-wrapper {
     display: flex;
     padding: 4px 10px;
@@ -273,6 +281,10 @@ pre[class*="language-"] {
     border-radius: 10px;
 }
 
+.token-container .grid>div>div.preview {
+    border: 1px solid #efefef;
+}
+
 .token-container .grid>div .token-sprout-wrapper {
     margin: 12px 0px;
     font-size: 12px;
@@ -324,4 +336,40 @@ pre[class*="language-"] {
 
 .sandbox-container-meta {
     padding-top: 8px;
+}
+
+.nav-sn {
+    visibility: hidden;
+}
+
+.nav:not(.nav-pills) .nav-item .nav-link.active,
+.nav:not(.nav-pills) .nav-item .nav-link:hover {
+    color: auto;
+}
+
+.docs-navigation .nav .nav-item:hover a {
+    color: auto;
+}
+
+.nav-tabs .nav-item .nav-link {
+    color: #000000FF !important;
+    height: 60px;
+}
+
+.container-tabs>.tabbed-navigation {
+    height: 60px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.container-tabs>.tabbed-navigation {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 84px;
+}
+
+.token-container table tr.typography td:nth-child(1) {
+    margin-left: 0px;
 }

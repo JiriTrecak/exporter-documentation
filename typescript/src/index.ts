@@ -3,13 +3,14 @@
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 // MARK: - Imports
 
+import { contrastingColor } from "./doc_functionality/experimental"
 import { constructDynamicHealthBlock, constructDynamicHealthList, constructGoogleSheetCSVUrl } from "./doc_functionality/health"
 import { firstPageFromTop, firstSubgroupOfPage, flattenedPageStructure, nextPage, pageOrGroupActiveInContext, previousPage } from "./doc_functionality/lookup"
 import { markdownToHTML } from "./doc_functionality/markdown"
 import { htmlSafeString, htmlSafeUrl } from "./doc_functionality/sandbox"
 import { buildSearchIndexJSON } from "./doc_functionality/search"
 import { highlightSafeString } from "./doc_functionality/string_utils"
-import { formattedTokenGroupHeader, fullTokenGroupName, gradientDescription, gradientTokenValue, measureTypeIntoReadableUnit, scaledShadowTokenValue, shadowDescription, shadowTokenValue, typographyDescription } from "./doc_functionality/tokens"
+import { formattedFullTokenName, formattedTokenGroupHeader, fullTokenGroupName, gradientDescription, gradientTokenValue, measureTypeIntoReadableUnit, scaledShadowTokenValue, shadowDescription, shadowTokenValue, typographyDescription } from "./doc_functionality/tokens"
 import { assetUrl, textBlockPlainText, pageUrl, rootUrl, slugifyHeading } from "./doc_functionality/urls"
 
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -46,6 +47,8 @@ Pulsar.registerFunction("shadowTokenValue", shadowTokenValue)
 Pulsar.registerFunction("scaledShadowTokenValue", scaledShadowTokenValue)
 Pulsar.registerFunction("measureTypeIntoReadableUnit", measureTypeIntoReadableUnit)
 Pulsar.registerFunction("typographyDescription", typographyDescription)
+Pulsar.registerFunction("formattedFullTokenName", formattedFullTokenName)
+Pulsar.registerFunction("contrastingColor", contrastingColor)
 
 /* Markdown */
 Pulsar.registerFunction("markdownToHTML", markdownToHTML)

@@ -1,6 +1,6 @@
 {
     "id": "io.jiritrecak.sprout",
-    "name": "Jiri's Template",
+    "name": "Seeds Design System",
     "description": "Supernova homage to Sprout Social's Seeds Design System",
     "author": "Jiri Trecak",
     "organization": "Supernova",
@@ -176,6 +176,26 @@
                 "default": "<link href=\"https:\/\/fonts.googleapis.com\/css2?family=Inter:wght@400;500;700&display=swap\" rel=\"stylesheet\">",
                 "isMultiline": true,
                 "inputType": "code"
+            },
+            {
+                "key": "componentHealthSourceIdentifier",
+                "type": "string",
+                "label": "Health Spreadsheet ID",
+                "description": "Spreadsheet identifier that points towards a spreadsheet containing the health definition.",
+                "category": "Seeds Specific",
+                "default": "1fEsp_fT4U-dT1o4ALVHHOSC1276UFLHPkkcGFivSM-A",
+                "isMultiline": false,
+                "inputType": "plain"
+            },
+            {
+                "key": "componentHealthSourceName",
+                "type": "string",
+                "label": "Spreadsheet page",
+                "description": "Spreadsheet page that points towards a page inside the spreadsheet containing the health definition.",
+                "category": "Seeds Specific",
+                "default": "Components",
+                "isMultiline": false,
+                "inputType": "plain"
             }
         ],
         "blocks": [{
